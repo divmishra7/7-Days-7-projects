@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="variable.css">
+    <title>vARIABLE</title>
+</head>
+<body>
+    <h1>Update CSS Variable with <span class="h1">JS</span></h1>
+    <div class="varaible" >
+        <label for="spacing">Spacing</label>
+        <input id="spacing" type="range" name="spacing" min="0" value="10" max="50" data-sizing="px" />
+        <label for="blur">Blur</label>
+        <input id="blur" type="range" name="blur" min="0" max="50" value="10" data-sizing="px"/>
+        <label for="color">Base Color</label>
+        <input id="color" type="color" name="base" value="#ffc600" /> 
+               
+    </div>
+    <div class="content">
+        <img src="https://image.freepik.com/free-vector/modern-bright-text-effect_23-2148948186.jpg" />
+    </div>
+    
+
+    <script>
+        const inputs = document.querySelectorAll("input");
+
+        function handleChange(){
+            const suffix= this.dataset.sizing || "";
+            
+            document.documentElement.style.setProperty(`--${this.name}`,this.value +suffix );
+        }
+
+        inputs.forEach(input => input.addEventListener("change",handleChange));
+        inputs.forEach(inp => inp.addEventListener("mousemove",handleChange));
+    </script>
+</body>
+</html>

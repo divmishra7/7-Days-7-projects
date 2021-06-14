@@ -1,0 +1,37 @@
+html{
+	background-image: linear-gradient(to right,#00ead3,#005f99) ;
+	text-align: center;
+}
+body {
+	display: flex;
+	
+	justify-content: center;
+  }
+.clock{
+	margin-top: 15em;
+	height: 10rem;
+	width: 10rem;
+	border: 10px solid white;
+	border-radius: 50%;
+}
+.clock-face{
+	
+	width: 9rem;
+	height: 9rem;
+	margin: auto;
+	transform: translateY(-3px);
+
+}
+.hand{
+	
+	height: 4px;
+	width: 50%;
+	position:absolute;
+	background-color: white;
+	top:55%;
+	transform-origin: 100%;
+	transform:rotate(90deg);
+	transition:all 0.1s;
+	transition-timing-function: cubic-bezier(0, 3.68, 0.58, 1);
+
+}
